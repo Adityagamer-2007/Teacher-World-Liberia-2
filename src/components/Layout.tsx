@@ -15,7 +15,7 @@ export default function Layout() {
   useEffect(() => { const f = () => setTop(window.scrollY > 600); window.addEventListener('scroll', f, { passive: true }); return () => window.removeEventListener('scroll', f) }, [])
   return (<>
     <header className="hdr"><div className="wrap nav">
-      <Link to="/" className="logo" aria-label="Teacher World Liberia — home"><img src="/images/logo.png" alt="Teacher World Liberia logo" width="687" height="231" /></Link>
+      <Link to="/" className="logo" aria-label="Teacher World Liberia — home"><img src="/images/logo.png" alt="Teacher World Liberia logo" width="372" height="113" /></Link>
       <button className="menu" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
       <nav aria-label="Main" className={open ? 'open' : ''}>
         {NAV.map(([to, l]) => <NavLink key={to} to={to} end={to === '/'} className={({ isActive }) => (isActive ? 'on' : '')}>{l}</NavLink>)}
@@ -23,7 +23,7 @@ export default function Layout() {
       </nav></div></header>
     <motion.main key={pathname} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}><Outlet /></motion.main>
     <footer className="ftr"><div className="wrap grid g4">
-      <div><img className="flogo" src="/images/logo.png" alt="Teacher World Liberia logo" width="687" height="231" loading="lazy" /><p><i>{MOTTO}</i></p><p>Teacher professional development, educational consultancy and support for children and communities in Liberia.</p></div>
+      <div><img className="flogo" src="/images/logo.png" alt="Teacher World Liberia logo" width="372" height="113" loading="lazy" /><p><i>{MOTTO}</i></p><p>Teacher professional development, educational consultancy and support for children and communities in Liberia.</p></div>
       <div><h3>Pages</h3>{NAV.map(([to, l]) => <Link key={to} to={to}>{l}</Link>)}<Link to="/get-involved">Get Involved</Link></div>
       <div><h3>Programs</h3><Link to="/programs">Training</Link><Link to="/programs">Educational Consultancy</Link><Link to="/programs">Charity &amp; Health</Link></div>
       <div><h3>Contact</h3>{PHONES.map(p => <a key={p} href={`tel:${p}`}>{p}</a>)}<a href={`mailto:${EMAIL}`}>{EMAIL}</a>{OFFICES.map(o => <p key={o.label} className="faddr"><b>{o.label}:</b> {o.address}</p>)}</div></div>

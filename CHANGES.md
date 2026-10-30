@@ -12,3 +12,8 @@
 - Rev. Edward J. Anderson: two different photos were sent under his caption; the first (man in cap) is used.
 - Three AI-looking "director at desk" images were sent but not used.
 - The three voice notes could not be transcribed; check them against this list.
+
+## Logo update
+- Replaced public/images/logo.png with the supplied logo (transparent padding trimmed, aspect ratio kept).
+- favicon.png regenerated from the globe-and-book mark of the same logo.
+- Navbar and footer logo sizing updated in src/styles.css (responsive at 480px and 360px); img width/height attributes updated in src/components/Layout.tsx.
